@@ -1,0 +1,21 @@
+html {
+  scroll-behavior: smooth;
+  font-family: "Cairo";
+}
+
+.app {
+  // height: 100vh;
+  height: 100%;
+}
+.layout {
+  // background-image: url("https://img.freepik.com/free-vector/pop-art-comic-background-with-halftone-color-funny-cloud_260559-327.jpg?w=740&t=st=1661779994~exp=1661780594~hmac=dc0d3340f3f81b63862972d9e3075762a17756edfdb0db850c89188d69461ea2");
+  // background-size: contain;
+  // // background-attachment: local;
+  // background-position: center;
+
+  // min-height: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

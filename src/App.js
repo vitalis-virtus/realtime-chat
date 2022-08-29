@@ -5,8 +5,12 @@ import Navbar from "./components/Navbar";
 const App = () => {
   return (
     <BrowserRouter>
-      <Navbar />
-      <AppRouter />
+      <div className="app">
+        <Navbar />
+        <div className="layout">
+          <AppRouter />
+        </div>
+      </div>
     </BrowserRouter>
   );
 };

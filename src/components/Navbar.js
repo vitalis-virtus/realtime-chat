@@ -1,4 +1,3 @@
-import { AppBar, Toolbar, Grid } from "@mui/material";
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { LOGIN_ROUTE } from "../utils/consts";
@@ -11,19 +10,21 @@ function Navbar() {
   const [user] = useAuthState(auth);
 
   return (
-    <AppBar color={"primary"} position="static">
-      <Toolbar>
-        <Grid container justify={"flex-start"}>
-          {user ? (
-            <button onClick={() => signOut(auth)}>Logout</button>
-          ) : (
-            <NavLink to={LOGIN_ROUTE}>
-              <button>Login</button>
-            </NavLink>
-          )}
-        </Grid>
-      </Toolbar>
-    </AppBar>
+    <div className="navbar">
+      <span className="navbar__logo">Realtime Chat</span>
+      {user ? (
+        <button
+          className="navbar__button button__logout"
+          onClick={() => signOut(auth)}
+        >
+          Logout
+        </button>
+      ) : (
+        <NavLink to={LOGIN_ROUTE}>
+          <button className="navbar__button button__login">Login</button>
+        </NavLink>
+      )}
+    </div>
   );
 }
 

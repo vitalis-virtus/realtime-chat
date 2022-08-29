@@ -8,7 +8,6 @@ import {
   collection,
   addDoc,
   orderBy,
-  getDocs,
   query,
 } from "firebase/firestore";
 
@@ -41,13 +40,24 @@ function Chat() {
     return <Loader />;
   }
   return (
-    <div>
-      <div>
+    <div className="chat">
+      <div className="chat__messages">
         {messages.map((message) => (
-          <div key={message.createdAt}>
-            <img src={message.photoURL} alt="avatar" />
-            <p>{message.displayName}</p>
-            <div>{message.text}</div>
+          <div
+            key={message.createdAt}
+            className={`chat__message ${
+              message.uid === user.uid ? "message__right" : "message__left"
+            }`}
+          >
+            <div className="message__bio">
+              <img
+                className="message__img"
+                src={message.photoURL}
+                alt="avatar"
+              />
+              <p className="message__diplayName">{message.displayName}</p>
+            </div>
+            <p className="message__text">{message.text}</p>
           </div>
         ))}
       </div>

@@ -12,8 +12,10 @@ function Login() {
   };
 
   return (
-    <div className="container">
-      <button onClick={login}>Enter with Google</button>
+    <div className="login">
+      <button onClick={login} className="login__button">
+        Enter with Google
+      </button>
     </div>
   );
 }
