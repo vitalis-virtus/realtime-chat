@@ -4,7 +4,8 @@
   align-items: center;
   height: 7vh;
   padding: 0 10px;
-  background-image: linear-gradient(to right, #00b4db, #0083b0);
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/921/407/714/graffiti-wallpaper-preview.jpg");
+  // background-image: linear-gradient(to right, #ffffff80, #0084b079);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   overflow: hidden;
 }
@@ -15,6 +16,7 @@
   text-transform: uppercase;
   font-weight: bold;
   display: inline-flex;
+  background-color: #00b3db;
   align-items: center;
   justify-content: center;
   padding: 5px 10px;
@@ -34,22 +36,23 @@
 
 .navbar__button {
   cursor: pointer;
+  font-weight: bold;
   outline: none;
   padding: 0;
   margin: 0;
   border: none;
-  background-color: #ffffff15;
+  background-color: #00b3db;
   transition: 0.2s;
   padding: 5px 10px;
   border-color: transparent;
   border-radius: 5px;
+
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
   &:hover {
     color: rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, 0.082);
     border-color: #fff;
-    font-weight: bold;
   }
 }
 
@@ -59,6 +62,6 @@
   }
 
   &__logout:hover {
-    background-color: rgba(128, 0, 0, 0.76);
+    background-color: rgba(253, 72, 72, 0.76);
   }
 }

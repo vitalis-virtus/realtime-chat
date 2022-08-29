@@ -25,15 +25,17 @@ function Chat() {
 
   const sendMessage = async (event) => {
     event.preventDefault();
-    await addDoc(collection(firestore, "messages"), {
-      uid: user.uid,
-      displayName: user.displayName,
-      photoURL: user.photoURL,
-      text: value,
-      createdAt: serverTimestamp(),
-    });
+    if (value) {
+      await addDoc(collection(firestore, "messages"), {
+        uid: user.uid,
+        displayName: user.displayName,
+        photoURL: user.photoURL,
+        text: value,
+        createdAt: serverTimestamp(),
+      });
 
-    setValue("");
+      setValue("");
+    }
   };
 
   if (loading) {
