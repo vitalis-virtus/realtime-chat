@@ -57,7 +57,15 @@ function Chat() {
               />
               <p className="message__diplayName">{message.displayName}</p>
             </div>
-            <p className="message__text">{message.text}</p>
+            <p
+              className={`message__text ${
+                message.uid === user.uid
+                  ? "message__text_right"
+                  : "message__text_left"
+              }`}
+            >
+              {message.text}
+            </p>
           </div>
         ))}
       </div>
@@ -65,11 +73,13 @@ function Chat() {
         onSubmit={(event) => {
           sendMessage(event);
         }}
+        className="chat__form"
       >
-        <input
+        <textarea
           value={value}
           onChange={(event) => setValue(event.target.value)}
           type="text"
+          className="chat__from_input"
         />
 
         <button
@@ -77,8 +87,9 @@ function Chat() {
           onClick={(event) => {
             sendMessage(event);
           }}
+          className="chat__from_button"
         >
-          Send
+          <div className="arrow"></div>
         </button>
       </form>
     </div>
