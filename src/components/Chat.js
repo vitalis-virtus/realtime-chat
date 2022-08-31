@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef } from "react";
 import Loader from "./Loader";
 import { Context } from "../index";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -15,6 +15,8 @@ function Chat() {
   const { auth, firestore } = useContext(Context);
   const [user] = useAuthState(auth);
 
+  const formRef = useRef(null);
+
   const messagesRef = collection(firestore, "messages");
 
   const searchQuery = query(messagesRef, orderBy("createdAt"));
@@ -25,7 +27,8 @@ function Chat() {
 
   const sendMessage = async (event) => {
     event.preventDefault();
-    if (value) {
+
+    if (value.trim().length) {
       await addDoc(collection(firestore, "messages"), {
         uid: user.uid,
         displayName: user.displayName,
@@ -38,50 +41,64 @@ function Chat() {
     }
   };
 
+  const onEnterPress = (event) => {
+    if (event.keyCode === 13 && event.shiftKey === false) {
+      sendMessage(event);
+    }
+  };
+
   if (loading) {
     return <Loader />;
   }
   return (
-    <div className="chat">
-      <div className="chat__messages">
-        {messages.map((message) => (
-          <div
-            key={message.createdAt}
-            className={`chat__message ${
-              message.uid === user.uid ? "message__right" : "message__left"
-            }`}
-          >
-            <div className="message__bio">
-              <img
-                className="message__img"
-                src={message.photoURL}
-                alt="avatar"
-              />
-              <p className="message__diplayName">{message.displayName}</p>
-            </div>
-            <p
-              className={`message__text ${
-                message.uid === user.uid
-                  ? "message__text_right"
-                  : "message__text_left"
+    <div className={`chat ${messages ? "" : "chat_no-messages"}`}>
+      {messages ? (
+        <div className="chat__messages">
+          {messages.map(({ createdAt, uid, photoURL, displayName, text }) => (
+            <div
+              key={createdAt}
+              className={`chat__message ${
+                uid === user.uid ? "message__right" : "message__left"
               }`}
             >
-              {message.text}
-            </p>
-          </div>
-        ))}
-      </div>
+              <div className="message__bio">
+                <img className="message__img" src={photoURL} alt="avatar" />
+                <p className="message__diplayName">{displayName}</p>
+              </div>
+              <p
+                className={`message__text ${
+                  uid === user.uid
+                    ? "message__text_right"
+                    : "message__text_left"
+                }`}
+              >
+                {text}
+              </p>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="chat__welcome">
+          <p>Welcome to realtime chat</p>
+          <p>No messages yet...</p>
+          <p></p>
+        </div>
+      )}
+
       <form
         onSubmit={(event) => {
           sendMessage(event);
         }}
+        ref={formRef}
         className="chat__form"
       >
         <textarea
           value={value}
           onChange={(event) => setValue(event.target.value)}
+          required={true}
+          onKeyDown={(event) => onEnterPress(event)}
           type="text"
-          className="chat__from_input"
+          className="chat__form_input"
         />
 
         <button
@@ -89,7 +106,7 @@ function Chat() {
           onClick={(event) => {
             sendMessage(event);
           }}
-          className="chat__from_button"
+          className="chat__form_button"
         >
           <div className="arrow"></div>
         </button>

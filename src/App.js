@@ -8,9 +8,7 @@ const App = () => {
     <BrowserRouter>
       <div className="app">
         <Navbar />
-        <div className="layout">
-          <AppRouter />
-        </div>
+        <AppRouter />
         <Footer />
       </div>
     </BrowserRouter>

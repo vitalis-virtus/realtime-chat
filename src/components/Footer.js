@@ -2,6 +2,7 @@ import React from "react";
 import { BsGithub, BsLinkedin, BsFacebook } from "react-icons/bs";
 
 function Footer() {
+  // return <></>;
   return (
     <footer className="footer">
       <ul className="social">
@@ -11,7 +12,7 @@ function Footer() {
             target="blank"
             href="https://github.com/vitalis-virtus"
           >
-            <BsGithub className="social__svg" size="26px" />
+            <BsGithub className="social__svg" />
           </a>
         </li>
         <li className="social__item">
@@ -20,7 +21,7 @@ function Footer() {
             target="blank"
             href="https://www.linkedin.com/in/vitalii-shaiuk/"
           >
-            <BsLinkedin className="social__svg" size="26px" />
+            <BsLinkedin className="social__svg" />
           </a>
         </li>
         <li className="social__item">
@@ -29,7 +30,7 @@ function Footer() {
             target="blank"
             href="https://www.facebook.com/vshaiuk"
           >
-            <BsFacebook className="social__svg" size="26px" />
+            <BsFacebook className="social__svg" />
           </a>
         </li>
       </ul>

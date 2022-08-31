@@ -1,36 +1,38 @@
 .login {
-  height: 90vh;
   display: flex;
   align-items: center;
+  margin-top: 30vh;
   justify-content: center;
 }
 
 .login__button {
+  color: $primary_black;
   font-weight: 700;
-  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
-    0px -5px 35px rgba(255, 255, 255, 0.3);
+  text-shadow: $text_shadow_login_btn;
   font-size: 20px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-image: linear-gradient(to left, #00b3dba2, #0084b0a6);
+  background-image: $gradient_login;
   border-radius: 10px;
   border: none;
-  background-color: rgba(255, 255, 255, 0.288);
+  background-color: $primary_white_40;
   outline: none;
   margin: 0;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: $box_shadow_btn;
   transition: 0.1s;
   padding: 30px;
   cursor: pointer;
 
   &:hover {
     transform: scale(1.02);
-    background-color: rgba(255, 255, 255, 0.623);
+    background-color: $primary_white_50;
 
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    box-shadow: $box_shadow_login;
+  }
+
+  &:hover .login__logo {
+    background-color: $primary_white_100;
   }
 }
 
@@ -38,10 +40,10 @@
   display: block;
   width: 50px;
   height: 50px;
-  background-color: rgba(255, 255, 255, 0.87);
-  border: 1px solid rgba(255, 255, 255, 0.534);
+  background-color: $primary_white_70;
+  border: 1px solid $primary_white_50;
   border-radius: 50px;
   padding: 5px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  transition: 0.1s;
+  box-shadow: $box_shadow_google_logo;
 }

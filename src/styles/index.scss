@@ -1,5 +1,8 @@
-@import "./components/navbar";
 @import "./normalize";
-@import "./components/login";
-@import "./components/chat";
+@import "./utils/variables";
+@import "./components/App";
+@import "./components/Navbar";
+@import "./components/Login";
+@import "./components/Chat";
 @import "./components/Footer";
+@import "./components/Loader";
