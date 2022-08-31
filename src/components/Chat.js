@@ -11,6 +11,10 @@ import {
   query,
 } from "firebase/firestore";
 
+import "../styles/normalize.scss";
+import "../styles/utils/variables.scss";
+import "../styles/components/Chat.scss";
+
 function Chat() {
   const { auth, firestore } = useContext(Context);
   const [user] = useAuthState(auth);

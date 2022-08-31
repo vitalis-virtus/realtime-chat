@@ -1,6 +1,10 @@
 import React from "react";
 import { BsGithub, BsLinkedin, BsFacebook } from "react-icons/bs";
 
+import "../styles/normalize.scss";
+import "../styles/utils/variables.scss";
+import "../styles/components/Footer.scss";
+
 function Footer() {
   // return <></>;
   return (

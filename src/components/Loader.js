@@ -1,5 +1,9 @@
 import React from "react";
 
+import "../styles/normalize.scss";
+import "../styles/utils/variables.scss";
+import "../styles/components/Loader.scss";
+
 function Loader() {
   return (
     <div className="loader__container">
