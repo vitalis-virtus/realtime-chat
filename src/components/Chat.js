@@ -83,7 +83,7 @@ function Chat() {
           value={value}
           onChange={(event) => setValue(event.target.value)}
           type="text"
-          className="chat__from_input"
+          className="chat__form_input"
         />
 
         <button
@@ -91,7 +91,7 @@ function Chat() {
           onClick={(event) => {
             sendMessage(event);
           }}
-          className="chat__from_button"
+          className="chat__form_button"
         >
           <div className="arrow"></div>
         </button>
