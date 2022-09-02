@@ -3,8 +3,6 @@ import AppRouter from "./components/AppRouter";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
-import "./styles/normalize.scss";
-import "./styles/utils/variables.scss";
 import "./styles/components/App.scss";
 
 const App = () => {
@@ -12,7 +10,9 @@ const App = () => {
     <BrowserRouter>
       <div className="app">
         <Navbar />
-        <AppRouter />
+        <div className="layout">
+          <AppRouter />
+        </div>
         <Footer />
       </div>
     </BrowserRouter>

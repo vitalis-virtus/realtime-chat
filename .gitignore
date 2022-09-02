@@ -27,3 +27,9 @@ yarn-error.log*
 .firebase
 
 .github
+/.github
+/.github/workflows
+.github/workflows
+
+.firebase
+/.firebase

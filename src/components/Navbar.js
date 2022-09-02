@@ -5,8 +5,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Context } from "../index";
 import { signOut } from "firebase/auth";
 
-import "../styles/normalize.scss";
-import "../styles/utils/variables.scss";
 import "../styles/components/Navbar.scss";
 
 function Navbar() {

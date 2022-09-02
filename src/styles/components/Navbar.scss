@@ -4,76 +4,67 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 10px;
+  height: 7vh;
+  padding: 0 10px;
   background-image: url("https://c4.wallpaperflare.com/wallpaper/921/407/714/graffiti-wallpaper-preview.jpg");
-  box-shadow: $box_shadow_navbar;
+  // background-image: linear-gradient(to right, #ffffff80, #0084b079);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   overflow: hidden;
 }
 
 .navbar__logo {
   cursor: default;
-  font-size: 14px;
+  font-size: 18px;
   text-transform: uppercase;
   font-weight: bold;
   display: inline-flex;
-  background-color: $primary_blue;
+  background-color: #00b3db;
   align-items: center;
   justify-content: center;
   padding: 5px 10px;
-  border: 1px solid $primary_black;
+  border: 1px solid rgba(0, 0, 0, 0.616);
   border-radius: 5px;
-  text-shadow: $text_shadow_navbar_logo;
+  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
+    0px -5px 35px rgba(255, 255, 255, 0.3);
   transition: 0.2s;
   user-select: none;
 
   &:hover {
-    box-shadow: $box_shadow_btn;
-    border-color: $primary_black;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-color: #000;
     transform: rotateY(720deg);
   }
 }
 
 .navbar__button {
-  font-size: 13px;
-  text-align: center;
   cursor: pointer;
   font-weight: bold;
   outline: none;
   padding: 0;
   margin: 0;
   border: none;
-  color: $primary_black;
-  background-color: $primary_blue;
+  background-color: #00b3db;
   transition: 0.2s;
-  padding: 5px;
+  padding: 5px 10px;
   border-color: transparent;
   border-radius: 5px;
+  color: $primary_black;
 
-  box-shadow: $box_shadow_btn;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
   &:hover {
-    color: primary_white_100;
-    background-color: $primary_white_10;
-    border-color: $primary_white_100;
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.082);
+    border-color: #fff;
   }
 }
 
 .button {
   &__login:hover {
-    background-color: $login_bgc;
+    background-color: rgba(0, 128, 0, 0.76);
   }
 
   &__logout:hover {
-    background-color: $logout_bgc;
-  }
-}
-
-@media screen and (min-width: $tablet) {
-  .navbar__logo {
-    font-size: 18px;
-  }
-
-  .navbar__button {
-    font-size: 16px;
+    background-color: rgba(253, 72, 72, 0.76);
   }
 }

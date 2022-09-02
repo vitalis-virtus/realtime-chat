@@ -2,8 +2,6 @@ import React, { useContext } from "react";
 import { Context } from "../index";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
-import "../styles/normalize.scss";
-import "../styles/utils/variables.scss";
 import "../styles/components/Login.scss";
 
 function Login() {
